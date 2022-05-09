@@ -16,10 +16,10 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main app.go
 
 # Use a minimal alpine image
 FROM alpine:3.7
-RUN apt update
-RUN apt install python
+#RUN apt update
+#RUN apt install python
 # Add ca-certificates in case you need them
-RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/* && apk add python
 
 # Set working directory
 WORKDIR /root
