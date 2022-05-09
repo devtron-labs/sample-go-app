@@ -23,7 +23,7 @@ RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/* && apk add 
 
 # Set working directory
 WORKDIR /root
-
+COPY hello.py /root/hello.py
 # Copy the binary from builder
 COPY --from=builder /app/. .
 
