@@ -1,6 +1,6 @@
 ################################# Build Container ###############################
 
-FROM --platform=$TARGETPLATFORM golang:1.16 as builder
+FROM golang:1.16 as builder
 
 # Setup the working directory
 WORKDIR /app
@@ -15,7 +15,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main app.go
 ################################# Prod Container #################################
 
 # Use a minimal alpine image
-FROM --platform=$TARGETPLATFORM alpine:3.7
+FROM alpine:3.7
 #RUN apt update
 #RUN apt install python
 # Add ca-certificates in case you need them
@@ -29,7 +29,6 @@ COPY --from=builder /app/. .
 
 # Run the binary
 CMD ["./main"]
-
 
 
 
