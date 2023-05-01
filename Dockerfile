@@ -19,7 +19,7 @@ FROM alpine:3.7
 #RUN apt update
 #RUN apt install python
 # Add ca-certificates in case you need them
-RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/* && apk add python
+#RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/* && apk add python
 
 # Set working directory
 WORKDIR /root
