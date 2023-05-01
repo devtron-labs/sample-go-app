@@ -20,10 +20,10 @@ FROM alpine:3.7
 #RUN apt install python
 # Add ca-certificates in case you need them
 #RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/* && apk add python
-
+RUN apk add ca-certificates && rm -rf /var/cache/apk/*
 # Set working directory
 WORKDIR /root
-COPY hello.py /root/hello.py
+#COPY hello.py /root/hello.py
 # Copy the binary from builder
 COPY --from=builder /app/. .
 
