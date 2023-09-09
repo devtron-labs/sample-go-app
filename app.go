@@ -12,7 +12,7 @@ import (
 // 	fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path[1:])
 // }
 
-func main() {
+func main1() {
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
