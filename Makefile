@@ -21,7 +21,7 @@ SERVER_MODE_EA_ONLY=EA_ONLY
 export
 
 build: clean wire
-	$(ENVVAR) GOOS=$(GOOS) go build -o devtron \
+	$(ENVVAR) GOOS=$(GOOS) go build -o sample-go-app \
 			-ldflags="-X 'github.com/devtron-labs/devtron/util.GitCommit=${GIT_COMMIT}' \
 			-X 'github.com/devtron-labs/devtron/util.BuildTime=${BUILD_TIME}' \
 			-X 'github.com/devtron-labs/devtron/util.ServerMode=${SERVER_MODE_FULL}'"
@@ -31,7 +31,7 @@ wire:
 	wire
 
 clean:
-	rm -rf devtron
+	rm -rf sample-go-app
 
 test-all: test-unit
 	echo 'test cases ran successfully'

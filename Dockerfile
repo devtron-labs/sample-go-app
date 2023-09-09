@@ -14,7 +14,7 @@ ADD . /go/src/github.com/devtron-labs/smaple-go-app/
 ADD . /app/
 
 # Build the source
-RUN  GOOS=linux make wire
+RUN  GOOS=linux make build
 
 
 ################################# Prod Container #################################
