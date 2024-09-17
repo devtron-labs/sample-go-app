@@ -17,7 +17,6 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.HandleFunc("/", serveTemplate)
-
 	log.Println("Listening on :8080...")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
