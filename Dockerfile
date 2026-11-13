@@ -1,4 +1,5 @@
 ################################# Build Container ###############################
+
 FROM --platform=$BUILDPLATFORM golang:1.22 AS builder
 
 ARG TARGETOS
