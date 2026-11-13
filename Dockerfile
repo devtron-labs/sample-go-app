@@ -1,6 +1,6 @@
 ################################# Build Container ###############################
 
-FROM golang:1.16 as builder
+FROM golang:1.16 AS builder
 
 # Setup the working directory
 WORKDIR /app
@@ -10,7 +10,6 @@ ADD . /app/
 
 # Build the source
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main app.go
-
 
 ################################# Prod Container #################################
 
@@ -28,7 +27,3 @@ COPY --from=builder /app/. .
 
 # Run the binary
 CMD ["./main"]
-
-
-
-
