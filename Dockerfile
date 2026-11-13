@@ -11,7 +11,6 @@ ADD . /app/
 # Build the source
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main app.go
 
-
 ################################# Prod Container #################################
 
 # Use a minimal alpine image
